@@ -1,0 +1,27 @@
+#!/usr/bin/python3
+import sys
+
+line = ""
+
+flag = 1
+
+if len(sys.argv) != 2:
+    print("error")
+    exit()
+
+file = open(sys.argv[1], 'r')
+print("opend")
+line = file.readline()
+while line:
+    n = int(line)
+    for  q in range (2, n):
+        if flag:
+            if n % q == 0:
+                p = n / q
+                print("{} = {} * {}".format(n, p, q))
+                flag = 0
+        else:
+            flag = 1
+            break
+    line = file.readline()
+file.close()
