@@ -5,10 +5,6 @@ line = ""
 
 flag = 1
 
-if len(sys.argv) != 2:
-    print("error")
-    exit()
-
 file = open(sys.argv[1], 'r')
 print("opend")
 line = file.readline()
